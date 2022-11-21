@@ -1,23 +1,100 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./scenes/Navbar";
+import Landing from "./scenes/Landing";
+import DotGroup from "./scenes/DotGroup";
+import MySkills from "./scenes/MySkills";
+import Projetos from "./scenes/Projetos";
+import Contato from "./scenes/Contato";
+import Footer from "./scenes/Footer";
+import useMediaQuery from "./hooks/useMediaQuery";
+import { useEffect, useState } from "react";
+import Testemunhos from "./scenes/Testemunhos";
+import { motion } from "framer-motion";
+
 
 function App() {
+  const [selectedPage, setSelectedPage] = useState("home");
+  const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const isDesktop = useMediaQuery("(min-width: 1060px)");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
+        setSelectedPage("home");
+      }
+      if (window.scrollY !== 0) setIsTopOfPage(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app bg-deep-blue">
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <div className="w-5/6 mx-auto md:h-full">
+        {isDesktop && (
+          <DotGroup
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        )}
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("home")}
         >
-          Learn React
-        </a>
-      </header>
+          <Landing setSelectedPage={setSelectedPage} />
+        </motion.div>
+      </div>
+      
+      <div className="w-5/6 mx-auto md:h-full ">        
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("skills")}
+        >
+          <MySkills />
+        </motion.div>
+      </div>
+      
+      <div className="w-5/6 mx-auto">        
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("projetos")}
+        >
+          <Projetos />
+        </motion.div>
+      </div>
+      
+      <div className="w-5/6 mx-auto md:h-full">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("testemunhos")}
+        >
+          <Testemunhos />
+        </motion.div>
+      </div>
+      
+      <div className="w-5/6 mx-auto md:h-full">
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("contato")}
+        >
+            <Contato />
+        </motion.div>
+      </div>
+
+        <div className="mt-8">
+          <Footer /> 
+        </div>
+      
     </div>
   );
 }
