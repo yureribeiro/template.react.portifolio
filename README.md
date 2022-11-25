@@ -1,3 +1,26 @@
+# Portifólio com React.js 
+"Este não é meu portifolio real, apenas ilustrativo afins de prática e conhecimento."
+deploy: https://react-portfolio-yureribeiro.vercel.app/
+
+![portifolio-react](https://user-images.githubusercontent.com/114265734/204014611-c1b85147-8af2-47eb-bfa2-750426e86611.png)
+
+- Framer Motion para dar uma animação e experiência suave ao usuário
+
+![portifolio-react skills](https://user-images.githubusercontent.com/114265734/204015062-ef996b1f-0357-4a2b-a8cd-07f4ec4636ae.png)
+
+- React Hook com Form Submit
+
+![portifolio-react skills 1](https://user-images.githubusercontent.com/114265734/204015081-e5e149de-8a6a-4445-afa9-2abf32f33eb1.png)
+
+## Usaremos: 
+
+React; 
+Tailwind CSS; 
+Framer Motion;
+React Hook Form com Form Submit.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
