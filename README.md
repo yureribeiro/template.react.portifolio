@@ -1,4 +1,4 @@
-# Portifólio com React.js 
+# Este não é meu portfólio real, feito apenas afim de estudo e prática com React.js 
 "Este não é meu portifolio real, apenas ilustrativo afins de prática e conhecimento."
 deploy: https://react-portfolio-yureribeiro.vercel.app/
 
