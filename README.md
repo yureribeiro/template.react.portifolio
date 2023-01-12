@@ -1,8 +1,7 @@
 # Este não é meu portfólio real, feito apenas afim de estudo e prática com React.js 
 "Este não é meu portifolio real, apenas ilustrativo afins de prática e conhecimento."
-deploy: https://react-portfolio-yureribeiro.vercel.app/
 
-![portifolio-react](https://user-images.githubusercontent.com/114265734/204014611-c1b85147-8af2-47eb-bfa2-750426e86611.png)
+deploy: https://react-portfolio-yureribeiro.vercel.app/
 
 - Framer Motion para dar uma animação e experiência suave ao usuário
 
